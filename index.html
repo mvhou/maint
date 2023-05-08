@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>convert</title>
+</head>
+
+<body>
+  <div class="app-container">
+    <p>Convert a Windows network drive path to a macOS path and vice versa.</p>
+
+    <div id="convert"><img id="apple" src="images/apple.png" alt="apple logo"><div class="button-text">convert</div> <img id="windows" src="images/windows.png" alt="windows logo"></div>
+  </div>
+</body>
+  <script src="index.js"></script>
+  <style>
+      @font-face {
+        font-family: OpenSans;
+        src: url('OpenSans-Bold.ttf')
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        background-image: url("images/rain.jpg");
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+        font-family: OpenSans;
+        text-shadow: 1px 1px black;
+      }
+
+      .app-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        padding: 3em;
+        border-radius: 10px;
+        background-color: rgba(100, 150, 150, 0.5);
+        margin-top: 10em;
+        min-height: 15em;
+        gap: 3em;
+      }
+
+      .button-text {
+        min-width: 10em;
+      }
+
+      #convert {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1em;
+        border: none;
+        color: white;
+        background-color: #81B29A;
+        height: 4em;
+        width: 20em;
+        border-radius: 3px;
+        box-shadow: 1px 2px 2px #051940;
+        font-family: OpenSans;
+        text-shadow: 1px 1px black;
+        transition-property: background-color;
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+        cursor: pointer;
+      }
+
+      img {
+        width: 2em;
+        height: 2.5em;
+      }
+
+      #convert:active {
+        box-shadow: 1px 1px 1px #051940;
+        top: 2px;
+        left: 1px;
+        position:relative;
+      }
+
+      #convert:hover {
+        background-color: #6cb474;
+      }
+
+      .success {
+        animation: success 2s;
+      }
+
+      .failed {
+        animation: failed 2s;
+      }
+
+      @keyframes success {
+        0% { background-color: #6cb474; }
+        25% {background-color: #051940;}
+        50% {background-color: #051940;}
+        100% { background-color: #81B29A; }
+      }
+
+      @keyframes failed {
+        0% { background-color: #6cb474; }
+        25% {background-color: #e07a5f;}
+        50% {background-color: #e07a5f;}
+        100% { background-color: #81B29A; }
+      }
+
+      .fade {
+        animation: fade 1.8s;
+        animation-fill-mode: forwards;
+      }
+
+      .fast-fade {
+        animation: fade 0.2s;
+        animation-fill-mode: forwards;
+      }
+
+      .buzz {
+        animation: buzz 1s;
+        /* animation-fill-mode: forwards; */
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0%; }
+        to { opacity: 100%; }
+      }
+
+      @keyframes fade {
+        0% { opacity: 100%; }
+        25% { opacity: 0%; }
+        75% { opacity: 0%; }
+        100% { opacity: 100%; }
+      }
+
+      @keyframes buzz { 
+        0% { transform: scale(1); } 
+        50% { transform: scale(1.1); } 
+        100% { transform: scale(1); } 
+      }
+  </style>
+</html>
